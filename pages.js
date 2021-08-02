@@ -39,6 +39,8 @@ const previous = function () {
 
 const updateSection = function () {
     outputTag.innerHTML = pages[pageNumber].copy
+    circleTag.style.backgroundColor = pages[pageNumber].circle
+    bodyTag.style.backgroundColor = pages[pageNumber].background
 }
 
 nextTag.addEventListener("click", function() {
@@ -48,4 +50,14 @@ nextTag.addEventListener("click", function() {
 
 previousTag.addEventListener("click", function () {
     previous()
+})
+
+document.addEventListener("keyup", function(e) {
+    if (e.key === "ArrowRight") {
+        next()
+    }
+
+    if (e.key == "ArrowLeft") {
+        previous()
+    }
 })
